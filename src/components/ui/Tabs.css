@@ -1,0 +1,96 @@
+/* White rounded bar with a honey pill that slides behind the selected choice */
+.tabs {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 32px auto 0;
+  padding: 6px;
+  background: var(--white);
+  border: 1px solid #f0d99a;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgb(184 106 0 / 0.1);
+}
+
+.tabs-indicator {
+  position: absolute;
+  z-index: 0;
+  background: linear-gradient(160deg, var(--honey-light), var(--amber-600) 75%);
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgb(217 119 6 / 0.35);
+  pointer-events: none;
+  transition:
+    left 0.35s cubic-bezier(0.3, 0.7, 0.2, 1),
+    top 0.35s cubic-bezier(0.3, 0.7, 0.2, 1),
+    width 0.35s cubic-bezier(0.3, 0.7, 0.2, 1),
+    height 0.35s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+.tab {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  background: none;
+  border: none;
+  border-radius: 999px;
+  color: var(--gray-700);
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.tab.active {
+  color: var(--white);
+}
+
+.tab:not(.active):hover {
+  color: var(--amber-700);
+}
+
+.tab:focus-visible {
+  outline: 3px solid var(--honey-light);
+  outline-offset: 2px;
+}
+
+/* Small number badge, e.g. how many photos are in a Gallery category */
+.tab-count {
+  min-width: 1.6rem;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.07);
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.tab.active .tab-count {
+  background: rgb(255 255 255 / 0.25);
+}
+
+/* On small screens the choices wrap onto more lines; the pill follows them */
+@media (max-width: 700px) {
+  .tabs {
+    flex-wrap: wrap;
+    max-width: calc(100% - 32px);
+    border-radius: 24px;
+  }
+
+  .tab {
+    padding: 10px 18px;
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabs-indicator {
+    transition: none;
+  }
+}

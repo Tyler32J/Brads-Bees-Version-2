@@ -1,0 +1,119 @@
+/* Made for the dark navy contact forms on the Home and Contact pages */
+.photo-upload {
+  display: grid;
+  gap: 12px;
+}
+
+/* Hidden but still reachable by keyboard and screen readers. The extra class
+   keeps the forms' general input styles from overriding this. */
+.photo-upload .photo-upload-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* .photo-upload in front keeps the forms' own label styles from changing this */
+.photo-upload .photo-upload-drop {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 26px 16px;
+  border: 2px dashed rgb(255 255 255 / 0.22);
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.03);
+  color: #b8c4de;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.photo-upload .photo-upload-drop:hover,
+.photo-upload .photo-upload-drop.is-dragging {
+  border-color: var(--honey-light);
+  background: rgb(245 185 66 / 0.08);
+}
+
+.photo-upload-input:focus-visible + .photo-upload-drop {
+  outline: 3px solid var(--honey-light);
+  outline-offset: 2px;
+}
+
+.photo-upload-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--honey-light);
+}
+
+.photo-upload-title {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.photo-upload-hint {
+  font-size: 0.85rem;
+}
+
+.photo-upload-count {
+  margin: 0;
+  color: #b8c4de;
+  font-size: 0.85rem;
+}
+
+.photo-upload-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.photo-upload-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgb(255 255 255 / 0.06);
+}
+
+.photo-upload-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-upload-remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgb(10 21 48 / 0.8);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.photo-upload-remove:hover,
+.photo-upload-remove:focus-visible {
+  background: var(--danger);
+  outline: none;
+}
+
+.photo-upload-remove svg {
+  width: 14px;
+  height: 14px;
+}

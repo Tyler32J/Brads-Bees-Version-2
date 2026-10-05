@@ -1,0 +1,79 @@
+/* White card with a honey top edge, a label for what Brad helped with,
+   and hexagon initials to match the other hexagon icons on the site */
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  height: 100%;
+  padding: var(--space-6);
+  border-top: 4px solid var(--honey-light);
+  border-radius: var(--radius-xl);
+  background-color: var(--white);
+  box-shadow: 0 8px 22px rgb(184 106 0 / 0.12);
+  text-align: left;
+}
+
+.review-service {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background-color: #fdf0c9;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.review-stars {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.star {
+  color: var(--yellow-500);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.review-text {
+  flex: 1;
+  margin: 0;
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.review-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.8rem;
+  height: 3.2rem;
+  background: linear-gradient(160deg, var(--honey-light), var(--amber-600) 70%);
+  clip-path: var(--hexagon);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.review-author-name,
+.review-author-location {
+  margin: 0;
+}
+
+.review-author-name {
+  color: var(--gray-900);
+  font-weight: 600;
+}
+
+.review-author-location {
+  color: var(--gray-600);
+  font-size: var(--font-size-sm);
+}
