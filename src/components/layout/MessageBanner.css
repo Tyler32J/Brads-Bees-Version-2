@@ -1,0 +1,58 @@
+.site-messages {
+  position: fixed;
+  top: 78px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1300;
+  width: min(720px, calc(100vw - 24px));
+}
+
+.site-messages.fade-out {
+  animation: message-fade 0.35s ease forwards;
+}
+
+.site-message {
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 14px 30px rgb(0 0 0 / 0.12);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  font-size: 1.02rem;
+  color: var(--white);
+}
+
+.site-message.success {
+  background: linear-gradient(135deg, var(--success) 0%, var(--success-dark) 100%);
+  border: 1px solid rgb(255 255 255 / 0.18);
+}
+
+.site-message.warning {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border: 1px solid rgb(255 255 255 / 0.18);
+}
+
+.site-message-text {
+  display: block;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+@keyframes message-fade {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+@media (max-width: 640px) {
+  .site-messages {
+    top: 70px;
+    width: calc(100vw - 16px);
+  }
+
+  .site-message {
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 0.98rem;
+  }
+}

@@ -1,0 +1,19 @@
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--gray-900);
+  color: var(--white);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.stat-number {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-1);
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+}

@@ -1,0 +1,558 @@
+.mi-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+  line-height: 1.5;
+}
+
+.mi-page h3 {
+  margin: 0;
+  color: var(--navy);
+}
+
+.mi-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Page and idea frames ---------- */
+.mi-intro {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.mi-intro h1 {
+  margin: 0 0 0.5rem;
+  color: var(--navy);
+  font-size: 2.4rem;
+}
+
+.mi-intro p {
+  max-width: 580px;
+  margin: 0 auto 0.75rem;
+  color: var(--gray-600);
+}
+
+.mi-intro a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.mi-idea {
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.07);
+}
+
+.mi-idea-header {
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px dashed var(--gray-300);
+  background: var(--amber-50);
+}
+
+.mi-idea-number {
+  color: var(--amber-700);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mi-idea-header h2 {
+  margin: 0.2rem 0 0.6rem;
+  color: var(--navy);
+  font-size: 1.5rem;
+}
+
+.mi-idea-header p {
+  margin: 0 0 0.35rem;
+  color: var(--gray-700);
+  font-size: 0.95rem;
+}
+
+.mi-idea-header .mi-idea-ask {
+  margin: 0.75rem 0 0;
+  padding: 0.6rem 0.9rem;
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  background: var(--white);
+}
+
+.mi-idea-stage {
+  padding: 2rem 1.75rem;
+}
+
+/* ---------- 1. Trust bar ---------- */
+.mi-trust {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+  border-radius: 14px;
+  background: var(--navy);
+}
+
+.mi-trust li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mi-trust li + li {
+  border-left: 1px solid rgb(255 255 255 / 0.15);
+}
+
+.mi-trust svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: var(--honey-light);
+}
+
+/* ---------- 2. Market ---------- */
+.mi-market {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--section-light);
+}
+
+.mi-market img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.mi-market-info {
+  padding: 1.75rem;
+}
+
+.mi-market-info h3 {
+  font-size: 1.5rem;
+}
+
+.mi-market-info > p {
+  margin: 0.25rem 0 1.25rem;
+  color: var(--gray-600);
+}
+
+.mi-market-info ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mi-market-info li {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+}
+
+.mi-market-info li > svg {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  color: var(--gold);
+}
+
+.mi-market-info li strong {
+  display: block;
+  color: var(--navy);
+}
+
+.mi-market-info li span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+
+.mi-market-info li span svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ---------- 3. Flavors ---------- */
+.mi-flavors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mi-flavors img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.mi-flavor-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.mi-flavor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mi-flavor p {
+  margin: 0.15rem 0 0;
+  color: var(--gray-600);
+  font-size: 0.95rem;
+}
+
+.mi-swatch {
+  flex-shrink: 0;
+  width: 48px;
+  height: 54px;
+  clip-path: var(--hexagon);
+}
+
+.mi-swatch.is-light {
+  background: #f5c55a;
+}
+
+.mi-swatch.is-medium {
+  background: #df8f1c;
+}
+
+.mi-swatch.is-dark {
+  background: #9c4a12;
+}
+
+/* ---------- 4. Gift bundle ---------- */
+.mi-bundle {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+}
+
+.mi-bundle-tag {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: var(--danger);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.mi-bundle-tag svg {
+  width: 15px;
+  height: 15px;
+}
+
+.mi-bundle-photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  height: 200px;
+  background: #fefefe;
+}
+
+.mi-bundle-photos img {
+  width: 42%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mi-bundle-photos span {
+  color: var(--gold);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.mi-bundle-body {
+  padding: 1.1rem 1.4rem 1.4rem;
+  border-top: 1px solid var(--shop-border);
+}
+
+.mi-bundle-body p {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--gray-600);
+}
+
+.mi-bundle-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.mi-bundle-price s {
+  color: var(--gray-400);
+}
+
+.mi-bundle-price strong {
+  color: var(--navy);
+  font-size: 1.6rem;
+}
+
+.mi-bundle-price span {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--success-bg);
+  color: var(--success-text);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* ---------- 5. Uses ---------- */
+.mi-uses {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.mi-use {
+  padding: 1.25rem 1rem;
+  border-radius: 14px;
+  background: var(--section-light);
+  text-align: center;
+}
+
+.mi-use > span {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 58px;
+  margin-bottom: 0.6rem;
+  background: var(--gold);
+  color: var(--white);
+  clip-path: var(--hexagon);
+}
+
+.mi-use svg {
+  width: 24px;
+  height: 24px;
+}
+
+.mi-use h3 {
+  font-size: 1.05rem;
+}
+
+.mi-use p {
+  margin: 0.3rem 0 0;
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+
+/* ---------- 6. Restock ---------- */
+.mi-restock {
+  display: flex;
+  gap: 1.25rem;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border: 2px dashed var(--honey-light);
+  border-radius: 16px;
+  background: var(--section-light);
+}
+
+.mi-restock > svg {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  color: var(--gold);
+}
+
+.mi-restock h3 {
+  font-size: 1.25rem;
+}
+
+.mi-restock p {
+  margin: 0.25rem 0 1rem;
+  color: var(--gray-600);
+}
+
+.mi-restock-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mi-restock-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 999px;
+  font-size: 1rem;
+}
+
+.mi-restock-form input:focus {
+  border-color: var(--gold);
+  outline: 2px solid rgb(217 133 0 / 0.25);
+}
+
+.mi-restock-form button {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mi-restock-form button:hover {
+  background: var(--gold);
+}
+
+.mi-restock .mi-restock-done {
+  margin: 0;
+  color: var(--success-text);
+  font-weight: 700;
+}
+
+/* ---------- 7. Hives for Heroes ---------- */
+.mi-heroes {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  border-radius: 16px;
+  background: linear-gradient(120deg, var(--navy), #1a2a52);
+  color: var(--footer-text);
+}
+
+.mi-heroes h3 {
+  color: var(--white);
+  font-size: 1.35rem;
+}
+
+.mi-heroes p {
+  margin: 0.4rem 0 0.8rem;
+}
+
+.mi-heroes a {
+  color: var(--honey-light);
+  font-weight: 700;
+}
+
+.mi-heroes-badge {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 84px;
+  height: 94px;
+  background: var(--honey-light);
+  color: var(--navy);
+  clip-path: var(--hexagon);
+}
+
+.mi-heroes-badge svg {
+  width: 36px;
+  height: 36px;
+}
+
+/* ---------- 8. Social ---------- */
+.mi-social {
+  text-align: center;
+}
+
+.mi-social h3 {
+  font-size: 1.5rem;
+}
+
+.mi-social p {
+  margin: 0.25rem 0 1.25rem;
+  color: var(--gray-600);
+}
+
+.mi-social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.mi-social-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  color: var(--white);
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.mi-social-buttons a:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.mi-social-buttons span {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.mi-social-buttons .is-facebook {
+  background: #1877f2;
+}
+
+.mi-social-buttons .is-instagram {
+  background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+}
+
+@media (max-width: 800px) {
+  .mi-idea-header,
+  .mi-idea-stage {
+    padding-inline: 1rem;
+  }
+
+  .mi-trust,
+  .mi-uses {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mi-trust li + li {
+    border-left: none;
+  }
+
+  .mi-market,
+  .mi-flavors {
+    grid-template-columns: 1fr;
+  }
+
+  .mi-heroes,
+  .mi-restock {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mi-restock-form {
+    flex-direction: column;
+  }
+}

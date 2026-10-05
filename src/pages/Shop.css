@@ -1,0 +1,288 @@
+/* Margins written in em reproduce the browser-default heading and paragraph
+   spacing the Django page relied on (Tailwind's reset removes them). */
+
+.shop-page {
+  display: flow-root;
+  background-color: var(--amber-50);
+  line-height: normal;
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+/* The bottom edge is cut into honey drips of different lengths. The drip shape
+   is a 320 x 40 tile repeated across; the top part overlaps it by 1px so no
+   seam shows where the two meet. */
+.shop-hero {
+  margin-bottom: 40px;
+  padding: 60px 20px 100px;
+  background: linear-gradient(135deg, var(--bronze) 0%, var(--bronze-dark) 100%);
+  color: var(--white);
+  text-align: center;
+  mask:
+    linear-gradient(#000 0 0) top / 100% calc(100% - 39px) no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='40' viewBox='0 0 320 40'%3E%3Cpath d='M0 0h320v6c-10 0-13 4-13 11 0 8-10 8-10 0 0-7-4-11-16-11h-58c-12 0-15 6-15 17 0 13-16 13-16 0 0-11-3-17-15-17H98c-9 0-11 3-11 8 0 7-9 7-9 0 0-5-3-8-12-8H44c-10 0-12 5-12 13 0 10-13 10-13 0 0-8-3-13-12-13H0z'/%3E%3C/svg%3E")
+      bottom left / 320px 40px repeat-x;
+}
+
+.shop-hero h1 {
+  margin: 0 0 8px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.shop-hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  opacity: 0.95;
+}
+
+/* =========================================================
+   Products
+   ========================================================= */
+.shop-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.shop-section h2,
+.why-shop h2 {
+  margin: 0.83em 0 40px;
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  color: var(--shop-text);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* =========================================================
+   Why shop with us
+   ========================================================= */
+.why-shop {
+  margin-top: 40px;
+  padding: 60px 20px;
+  /* Starts as the page's light tan and deepens into golden honey toward the footer */
+  background: linear-gradient(180deg, var(--amber-50) 0%, #fde7a9 55%, #f7c95c 100%);
+}
+
+.why-shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-shop-card {
+  padding: 30px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgb(184 106 0 / 0.14);
+  text-align: center;
+}
+
+/* Orange hexagon badge, matching the icons on the Home, Services and Education pages */
+.why-shop-icon {
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.7rem;
+  margin: 0 auto 15px;
+  background: linear-gradient(160deg, var(--honey-light), var(--amber-600) 70%);
+  clip-path: var(--hexagon);
+  color: var(--white);
+}
+
+.why-shop-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.why-shop-card h3 {
+  margin: 15px 0;
+  font-size: 1.17em;
+  font-weight: 700;
+  color: var(--shop-text);
+}
+
+.why-shop-card p {
+  margin: 1em 0;
+  line-height: 1.6;
+  color: var(--shop-muted);
+}
+
+/* =========================================================
+   Floating cart button
+   ========================================================= */
+.floating-cart-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 1.4rem 0.6rem 0.6rem;
+  background: var(--white);
+  color: var(--navy);
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.floating-cart-btn:hover {
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.22);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* Navy circle with a gold ring that flips to gold on hover */
+.cart-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  background: var(--navy);
+  color: var(--honey-light);
+  border: 3px solid var(--honey-light);
+  border-radius: 50%;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.cart-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.floating-cart-btn:hover .cart-icon {
+  background: var(--honey-light);
+  color: var(--navy);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  display: grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 5px;
+  background: var(--honey-light);
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  animation: cart-pop 0.4s ease;
+}
+
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.cart-summary small {
+  color: var(--gray-400);
+  font-size: 0.75rem;
+}
+
+.cart-summary strong {
+  font-size: 1.1rem;
+}
+
+@keyframes cart-pop {
+  40% {
+    transform: scale(1.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cart-badge {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 768px) {
+  .shop-hero {
+    padding: 42px 16px;
+  }
+
+  .shop-hero h1 {
+    font-size: 2rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .floating-cart-btn {
+    right: 20px;
+    bottom: calc(20px + var(--mobile-bar-height) + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-section {
+    padding: 20px 15px;
+  }
+
+  .shop-hero h1 {
+    font-size: 1.5em;
+  }
+
+  .shop-hero p {
+    font-size: 0.95em;
+  }
+
+  .products-grid,
+  .why-shop-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .shop-section h2,
+  .why-shop h2 {
+    font-size: 1.5em;
+  }
+
+  .floating-cart-btn {
+    right: 15px;
+    bottom: calc(15px + var(--mobile-bar-height) + env(safe-area-inset-bottom));
+    gap: 0.6rem;
+    padding: 0.45rem 1.1rem 0.45rem 0.45rem;
+  }
+
+  .cart-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cart-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cart-summary strong {
+    font-size: 1rem;
+  }
+}

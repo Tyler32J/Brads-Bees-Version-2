@@ -1,0 +1,455 @@
+.home-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* =========================================================
+   Shared section headings
+   ========================================================= */
+.section-title,
+.section-heading {
+  font-size: var(--font-size-4xl);
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--gray-900);
+}
+
+.section-title {
+  margin: 0 0 var(--space-12);
+}
+
+.section-heading {
+  margin: 0 0 var(--space-4);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--gray-600);
+  margin-bottom: var(--space-12);
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+.hero-section {
+  background-color: var(--amber-50);
+}
+
+.hero-container {
+  padding-block: var(--space-16);
+}
+
+.hero-grid {
+  display: grid;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.hero-title {
+  font-size: var(--font-size-6xl);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 0 var(--space-8);
+  color: var(--gray-900);
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--gray-700);
+  margin-bottom: var(--space-8);
+  line-height: 1.6;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+}
+
+.hero-logo {
+  width: min(600px, 100%);
+  height: auto;
+}
+
+/* =========================================================
+   My Story
+   ========================================================= */
+.about-section {
+  padding-block: var(--space-16);
+  background-color: var(--white);
+}
+
+.about-container {
+  max-width: 1024px;
+}
+
+.about-grid {
+  display: grid;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.about-image-wrapper {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  color: var(--gray-700);
+}
+
+/* =========================================================
+   Quick links
+   ========================================================= */
+/* Wraps the quick links and reviews so the honeycomb runs through both without a seam.
+   The top and bottom 140px fade from the white sections above and below into the
+   honeycomb, so it blends in instead of starting and stopping at a hard line. */
+.honeycomb-band {
+  background-color: var(--amber-50);
+  background-image:
+    linear-gradient(
+      180deg,
+      var(--white) 0,
+      transparent 140px,
+      transparent calc(100% - 140px),
+      var(--white) 100%
+    ),
+    var(--honeycomb-pattern);
+  background-size:
+    100% 100%,
+    var(--honeycomb-size);
+}
+
+.services-section {
+  padding-block: var(--space-16);
+}
+
+/* Wider than .container so all four 22rem cards fit on one row */
+.services-container {
+  max-width: calc(4 * 22rem + 3 * var(--space-6) + 2 * var(--space-6));
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 22rem));
+  gap: var(--space-6);
+  justify-content: center;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  height: 11rem;
+  padding: 0 var(--space-8) 5rem;
+  background-color: var(--gray-900);
+  color: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  background-color: var(--gray-800);
+  box-shadow: var(--shadow-2xl);
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+/* Honeycomb shimmer: a band of honey-coloured hexagons sweeps across on hover */
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 64.66L0 48.5V16.17L28 0l28 16.17V48.5L28 64.66V97' fill='none' stroke='%23f5b942' stroke-opacity='0.85' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: 28px 48.5px;
+  mask-image: linear-gradient(105deg, transparent 35%, #000 50%, transparent 65%);
+  mask-size: 300% 100%;
+  mask-position: 100% 0;
+  pointer-events: none;
+}
+
+.service-card:hover::after,
+.service-card:focus-visible::after {
+  mask-position: 0 0;
+  transition: mask-position 0.9s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card:hover::after,
+  .service-card:focus-visible::after {
+    transition: none;
+  }
+}
+
+.service-icon {
+  width: 8rem;
+  height: 7rem;
+  margin-inline: auto;
+}
+
+.service-title {
+  position: relative;
+  z-index: 1;
+  margin: -20px 0 0;
+  font-size: var(--font-size-2xl);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.service-description {
+  color: var(--gray-300);
+}
+
+/* =========================================================
+   Reviews
+   ========================================================= */
+.reviews-section {
+  padding-block: var(--space-16);
+}
+
+/* Arrow | cards | arrow. On phones the arrows move underneath the cards. */
+.reviews-carousel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: 'prev cards next';
+  align-items: center;
+  gap: var(--space-6);
+  max-width: 1240px;
+  margin-inline: auto;
+}
+
+.reviews-grid {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-8);
+  align-items: stretch;
+}
+
+/* Only show as many reviews as fit; the arrows bring the others in */
+.reviews-grid > :nth-child(n + 4) {
+  display: none;
+}
+
+.reviews-grid > * {
+  animation: review-in 0.35s ease-out;
+}
+
+@keyframes review-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.reviews-arrow {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background-color: var(--bronze);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgb(184 98 27 / 0.3);
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+}
+
+.reviews-arrow.is-prev {
+  grid-area: prev;
+}
+
+.reviews-arrow.is-next {
+  grid-area: next;
+}
+
+.reviews-arrow:hover {
+  background-color: var(--bronze-dark);
+  transform: scale(1.08);
+}
+
+.reviews-arrow:focus-visible {
+  outline: 3px solid var(--honey-light);
+  outline-offset: 3px;
+}
+
+.reviews-arrow svg {
+  width: 26px;
+  height: 26px;
+}
+
+@media (max-width: 1023px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reviews-grid > :nth-child(n + 3) {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .reviews-carousel {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'cards cards'
+      'prev next';
+    gap: var(--space-4);
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid > :nth-child(n + 2) {
+    display: none;
+  }
+
+  .reviews-arrow.is-prev {
+    justify-self: end;
+  }
+
+  .reviews-arrow.is-next {
+    justify-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-grid > * {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   Contact
+   ========================================================= */
+.contact-section {
+  padding-block: var(--space-16);
+  background-color: var(--white);
+}
+
+.contact-container {
+  max-width: 1152px;
+}
+
+.contact-grid {
+  display: grid;
+  gap: var(--space-12);
+  align-items: flex-start;
+}
+
+.contact-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contact-image-wrapper {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--amber-50);
+  border-radius: var(--radius-lg);
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.6rem;
+  height: 3rem;
+  background: linear-gradient(160deg, var(--honey-light), var(--amber-600) 70%);
+  clip-path: var(--hexagon);
+  color: var(--white);
+}
+
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-info-text {
+  color: var(--gray-900);
+}
+
+.contact-info-subtext {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (min-width: 768px) {
+  .hero-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section-title,
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

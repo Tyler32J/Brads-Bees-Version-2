@@ -1,0 +1,300 @@
+.ideas-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+  line-height: 1.5;
+}
+
+.ideas-intro {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.ideas-intro h1 {
+  margin: 0 0 0.5rem;
+  color: var(--navy);
+  font-size: 2.4rem;
+}
+
+.ideas-intro p {
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--gray-600);
+}
+
+.ideas-intro .ideas-more {
+  margin-top: 0.75rem;
+}
+
+.ideas-more a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.idea-block {
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.07);
+}
+
+.idea-header {
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px dashed var(--gray-300);
+  background: var(--amber-50);
+}
+
+.idea-number {
+  color: var(--amber-700);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.idea-header h2 {
+  margin: 0.2rem 0 0.75rem;
+  color: var(--navy);
+  font-size: 1.5rem;
+}
+
+.idea-meta,
+.idea-ask {
+  margin: 0 0 0.4rem;
+  color: var(--gray-700);
+  font-size: 0.95rem;
+}
+
+.idea-ask {
+  margin: 0.75rem 0 0;
+  padding: 0.6rem 0.9rem;
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  background: var(--white);
+}
+
+.idea-preview {
+  padding: 2rem 1.75rem;
+}
+
+/* ---------- 1. FAQ ---------- */
+.faq-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  border: 1px solid var(--header-border);
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  color: var(--navy);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  color: var(--gold);
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item summary:hover {
+  color: var(--gold);
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 1.25rem 1rem;
+  color: var(--gray-600);
+}
+
+/* ---------- 2. Honeybee guide ---------- */
+.insect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.insect-card {
+  padding: 1.25rem;
+  border: 2px solid var(--header-border);
+  border-radius: 14px;
+}
+
+.insect-card.is-yes {
+  border-color: var(--gold);
+  background: var(--section-light);
+}
+
+.insect-card h3 {
+  margin: 0 0 0.6rem;
+  color: var(--navy);
+}
+
+.insect-card p {
+  margin: 0 0 0.5rem;
+  color: var(--gray-600);
+  font-size: 0.95rem;
+}
+
+.insect-card .insect-action {
+  margin: 0.75rem 0 0;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.insect-card.is-yes .insect-action {
+  color: var(--amber-700);
+}
+
+/* ---------- 3. Swarm steps ---------- */
+.swarm-box {
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--navy);
+  color: var(--footer-text);
+  text-align: center;
+}
+
+.swarm-box h3 {
+  margin: 0 0 1.5rem;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.swarm-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.swarm-steps li {
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.06);
+}
+
+.swarm-steps span {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.6rem;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.swarm-steps strong {
+  color: var(--white);
+}
+
+.swarm-call {
+  display: inline-block;
+  padding: 0.8rem 1.75rem;
+  border-radius: 8px;
+  background: var(--gold);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.swarm-call:hover {
+  background: var(--gold-dark);
+  text-decoration: none;
+}
+
+/* ---------- 4. Service area ---------- */
+.area-box {
+  text-align: center;
+}
+
+.area-box h3 {
+  margin: 0 0 1.25rem;
+  color: var(--navy);
+  font-size: 1.5rem;
+}
+
+.area-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.area-list li {
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: var(--section-light);
+  color: var(--amber-700);
+  font-weight: 600;
+}
+
+.area-box p {
+  margin: 0;
+  color: var(--gray-600);
+}
+
+.area-box a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ---------- 5. Season banner ---------- */
+.season-banner {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #c97a13, var(--amber-600));
+  color: var(--white);
+  text-align: center;
+}
+
+.season-banner a {
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .insect-grid,
+  .swarm-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .idea-header,
+  .idea-preview {
+    padding-inline: 1.1rem;
+  }
+
+  .swarm-box {
+    padding: 1.5rem 1.1rem;
+  }
+}

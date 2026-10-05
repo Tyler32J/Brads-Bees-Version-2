@@ -1,0 +1,641 @@
+.si-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+  line-height: 1.5;
+}
+
+/* ---------- Page and idea frames ---------- */
+.si-intro {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.si-intro h1 {
+  margin: 0 0 0.5rem;
+  color: var(--navy);
+  font-size: 2.4rem;
+}
+
+.si-intro p {
+  max-width: 580px;
+  margin: 0 auto 0.75rem;
+  color: var(--gray-600);
+}
+
+.si-intro a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.si-idea {
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.07);
+}
+
+.si-idea-header {
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px dashed var(--gray-300);
+  background: var(--amber-50);
+}
+
+.si-idea-number {
+  color: var(--amber-700);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.si-idea-header h2 {
+  margin: 0.2rem 0 0.5rem;
+  color: var(--navy);
+  font-size: 1.5rem;
+}
+
+.si-idea-header p {
+  margin: 0;
+  color: var(--gray-700);
+}
+
+.si-idea-header .si-idea-ask {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  background: var(--white);
+  font-size: 0.95rem;
+}
+
+.si-idea-stage {
+  padding: 2rem 1.75rem;
+  background: var(--section-light);
+}
+
+.si-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 300px));
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.si-row-single {
+  grid-template-columns: minmax(0, 320px);
+}
+
+/* ---------- Shared card pieces ---------- */
+.si-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.si-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgb(0 0 0 / 0.13);
+}
+
+/* Warm glow behind every photo. Multiply blends away the white boxes in the jar photos. */
+.si-photo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 220px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 60%, #fff3d6 0%, #fdf8ec 55%, #faf6ee 100%);
+}
+
+.si-photo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+  mix-blend-mode: multiply;
+  transition: transform 0.35s ease;
+}
+
+.si-card:hover .si-photo img,
+.si-compare .si-photo:hover img {
+  transform: scale(1.08);
+}
+
+.si-fade {
+  animation: si-fade-in 0.3s ease-out;
+}
+
+.si-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.si-card-body h3 {
+  margin: 0 0 0.25rem;
+  color: var(--navy);
+  font-size: 1.25rem;
+}
+
+.si-variant {
+  margin: 0;
+  color: var(--shop-muted);
+}
+
+.si-variant-inline {
+  color: var(--shop-muted);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.si-desc {
+  margin: 0.5rem 0 1rem;
+  color: var(--gray-600);
+  font-size: 0.95rem;
+}
+
+.si-stars {
+  color: var(--star-orange);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+}
+
+.si-stars-empty {
+  color: #dddddd;
+}
+
+.si-stars small {
+  margin-left: 0.3rem;
+  color: var(--shop-muted);
+  letter-spacing: 0;
+}
+
+.si-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.si-footer-stack {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.si-price {
+  color: var(--navy);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.si-add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.si-add:hover {
+  background: var(--gold-dark);
+}
+
+.si-add:active {
+  transform: scale(0.96);
+}
+
+.si-add svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- 1. Size picker ---------- */
+.si-card-wide {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.si-card-wide .si-photo {
+  height: 100%;
+  min-height: 320px;
+}
+
+.si-label {
+  margin: 0 0 0.5rem;
+  color: var(--navy);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.si-sizes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.si-sizes button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.6rem 0.4rem;
+  border: 2px solid var(--gray-300);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--navy);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.si-sizes button small {
+  color: var(--shop-muted);
+  font-weight: 500;
+}
+
+.si-sizes button:hover {
+  border-color: var(--honey-light);
+}
+
+.si-sizes button[aria-checked='true'] {
+  border-color: var(--gold);
+  background: var(--amber-50);
+}
+
+/* ---------- 2. Free shipping ---------- */
+.si-shipping-demo {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.si-shipping {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--honey-light);
+  border-radius: 14px;
+  background: var(--white);
+}
+
+.si-shipping > svg {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  color: var(--gold);
+}
+
+.si-shipping.is-free > svg {
+  color: var(--success);
+}
+
+.si-shipping-text {
+  flex: 1;
+}
+
+.si-shipping-text p {
+  margin: 0 0 0.5rem;
+  color: var(--navy);
+}
+
+.si-shipping-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--gray-50);
+  box-shadow: inset 0 0 0 1px var(--header-border);
+}
+
+.si-shipping-track span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--honey-light), var(--gold));
+  transition: width 0.4s ease;
+}
+
+.si-shipping.is-free .si-shipping-track span {
+  background: var(--success);
+}
+
+.si-demo-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+
+.si-demo-buttons button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--amber-700);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.si-demo-buttons button:hover {
+  background: var(--amber-50);
+}
+
+.si-demo-buttons .si-reset {
+  border-color: var(--gray-300);
+  color: var(--gray-600);
+}
+
+/* ---------- 3. Stepper ---------- */
+.si-buy-row {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.si-buy-row .si-add {
+  flex: 1;
+}
+
+.si-add.is-added {
+  background: var(--success);
+}
+
+.si-stepper {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--gray-300);
+  border-radius: 999px;
+}
+
+.si-stepper button {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.si-stepper button:hover {
+  color: var(--gold);
+}
+
+.si-stepper svg {
+  width: 16px;
+  height: 16px;
+}
+
+.si-stepper span {
+  min-width: 1.5rem;
+  color: var(--navy);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ---------- 4. Photo compare ---------- */
+.si-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 280px));
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.si-compare figure {
+  margin: 0;
+  overflow: hidden;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.08);
+}
+
+/* Matches the current shop card */
+.si-photo-now {
+  display: grid;
+  place-items: center;
+  height: 220px;
+  background: var(--shop-bg);
+}
+
+.si-photo-now img {
+  max-height: 100%;
+  padding: 10px 14px;
+}
+
+.si-compare figcaption {
+  padding: 0.75rem 1rem;
+  color: var(--gray-700);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---------- 5. Ribbons ---------- */
+.si-ribbon {
+  position: absolute;
+  top: 16px;
+  left: -34px;
+  z-index: 1;
+  width: 150px;
+  padding: 0.3rem 0;
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
+}
+
+.si-ribbon.is-gold {
+  background: var(--gold);
+}
+
+.si-ribbon.is-navy {
+  background: var(--navy);
+}
+
+/* ---------- 6. Quick view ---------- */
+.si-quick-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(transparent, rgb(10 21 48 / 0.92) 30%);
+  color: var(--white);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.si-quick-overlay p {
+  margin: 0.75rem 0 0.4rem;
+  font-size: 0.9rem;
+}
+
+.si-quick:hover .si-quick-overlay,
+.si-quick:focus-within .si-quick-overlay {
+  transform: none;
+}
+
+.si-quick-body {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.si-quick-add {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.si-quick-add svg {
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+  border-radius: 50%;
+  background: var(--honey-light);
+  color: var(--navy);
+}
+
+.si-quick-add:hover {
+  background: var(--gold);
+}
+
+/* ---------- 7. Featured banner ---------- */
+.si-featured {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #fff6df 0%, #fde3a7 100%);
+  color: var(--gray-700);
+}
+
+.si-featured-text {
+  padding: 2.25rem;
+}
+
+.si-featured-tag {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--honey-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.si-featured h3 {
+  margin: 0 0 0.5rem;
+  color: var(--navy);
+  font-size: 2rem;
+}
+
+.si-featured p {
+  margin: 0 0 1.5rem;
+}
+
+.si-add-lg {
+  padding: 0.85rem 1.6rem;
+}
+
+.si-featured-photo {
+  position: relative;
+  height: 100%;
+  min-height: 280px;
+  background: radial-gradient(circle at 50% 60%, rgb(255 255 255 / 0.7), transparent 60%);
+}
+
+.si-featured-photo img {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  height: 70%;
+  mix-blend-mode: multiply;
+  transform: translateX(-30%);
+}
+
+.si-featured-photo img.is-back {
+  height: 80%;
+  transform: translateX(-85%);
+  opacity: 0.9;
+}
+
+@keyframes si-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .si-page * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .si-idea-header,
+  .si-idea-stage {
+    padding-inline: 1rem;
+  }
+
+  .si-row,
+  .si-compare,
+  .si-card-wide,
+  .si-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .si-card-wide .si-photo {
+    min-height: 240px;
+  }
+
+  .si-featured-text {
+    padding: 1.75rem 1.25rem 0.5rem;
+  }
+}

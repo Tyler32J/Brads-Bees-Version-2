@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+
+/* Tailwind is still used by the pages that haven't been ported to the
+   Django design yet (Services, Shop, Cart, Checkout, Education, Gallery,
+   Contact). Remove it once those pages use plain CSS. */
+@theme {
+  --color-gold: #d98500;
+  --color-navy: #0a1530;
+  --color-success: #27ae60;
+  --color-error: #e74c3c;
+}
+
+/* =========================================================
+   Design tokens
+   ========================================================= */
+:root {
+  /* Brand */
+  --gold: #d98500;
+  --gold-dark: #b86a00;
+  --navy: #0a1530;
+  --text: #101b34;
+  --nav-text: #535d6f;
+  --surface: #ffffff;
+  --page: #e6e6e8;
+  --header-border: #ececec;
+  --section-light: #fdfbee;
+
+  /* Shop */
+  --bronze: #cd7f32;
+  --bronze-dark: #b8621b;
+  --star-orange: #ff9800;
+  --shop-text: #333333;
+  --shop-muted: #666666;
+  --shop-bg: #f9f9f9;
+  --shop-border: #e0e0e0;
+  --danger: #e74c3c;
+
+  /* Footer */
+  --footer-text: #d5deef;
+  --footer-muted: #90a0bf;
+  --footer-icon: #f2a900;
+
+  /* Amber / gray scale */
+  --amber-50: #fffbeb;
+  --amber-600: #d97706;
+  --amber-700: #b45309;
+  --gray-50: #f9fafb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --white: #ffffff;
+  --yellow-500: #eab308;
+
+  /* Feedback */
+  --success: #27ae60;
+  --success-dark: #1f8a4d;
+  --success-bg: #d1fae5;
+  --success-text: #065f46;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Radius */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  /* Honeycomb touches: a faint hexagon background pattern and a hexagon shape
+     for icon badges. Use the pattern with background-size: var(--honeycomb-size). */
+  --honeycomb-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 64.66L0 48.5V16.17L28 0l28 16.17V48.5L28 64.66V97' fill='none' stroke='%23d97706' stroke-opacity='0.22' stroke-width='1.5'/%3E%3C/svg%3E");
+  --honeycomb-size: 40px 69.3px;
+  --hexagon: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  --honey-light: #f5b942;
+
+  /* Type scale */
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-6xl: 3.75rem;
+}
+
+/* =========================================================
+   Base
+   Kept in the base layer so Tailwind utilities on unported
+   pages can still override it.
+   ========================================================= */
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    /* White matches the header, so it blends in if a browser still bounces */
+    background: var(--white);
+    line-height: 1.5;
+    /* Stop the "rubber band" bounce past the top and bottom of the page */
+    overscroll-behavior-y: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* =========================================================
+   Shared layout helpers
+   ========================================================= */
+
+/* Keep the footer at the bottom of the window on short pages (like a cart
+   with one item). The page stretches to fill the gap with its own background
+   instead of the grey page colour showing below the footer. */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+#root > main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+#root > main > :last-child {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}

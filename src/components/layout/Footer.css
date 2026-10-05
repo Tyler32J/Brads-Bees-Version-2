@@ -1,0 +1,142 @@
+.site-footer {
+  background: var(--navy);
+  color: var(--footer-text);
+  padding: 42px 20px 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 56px;
+  row-gap: 20px;
+  text-align: center;
+  justify-items: center;
+}
+
+.footer-brand {
+  max-width: 480px;
+}
+
+.footer-brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  transform: translateX(-50px);
+}
+
+.footer-logo {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  margin-block: -20px;
+}
+
+.site-footer h3 {
+  margin: 0;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.site-footer h4 {
+  margin: 0 0 10px;
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.site-footer p {
+  margin: 0 0 8px;
+  color: var(--footer-muted);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.site-footer a {
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: var(--footer-icon);
+}
+
+.footer-contact-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--footer-muted);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.footer-contact-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--footer-icon);
+  flex-shrink: 0;
+}
+
+.footer-follow-title {
+  margin-top: 24px;
+}
+
+.site-footer .footer-community-title {
+  margin-top: 32px;
+}
+
+.site-footer .footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--footer-muted);
+}
+
+.site-footer .footer-social-link:hover {
+  text-decoration: none;
+}
+
+/* Facebook-blue circle that turns gold with the link on hover */
+.footer-social-icon {
+  width: 34px;
+  height: 34px;
+  padding: 7px;
+  border-radius: 50%;
+  background: #1877f2;
+  fill: var(--white);
+  transition: background 0.2s ease;
+}
+
+.footer-social-link:hover .footer-social-icon {
+  background: var(--footer-icon);
+}
+
+.site-footer .footer-copyright {
+  grid-column: 1 / -1;
+  margin-top: 16px;
+  padding-top: 10px;
+  border-top: 1px solid rgb(255 255 255 / 0.07);
+}
+
+@media (max-width: 1100px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand-row {
+    transform: none;
+  }
+}
+
+/* Give footer links a bigger tap area on touch screens (phones and tablets) */
+@media (pointer: coarse) {
+  .site-footer a {
+    display: inline-block;
+    padding-block: 8px;
+  }
+}

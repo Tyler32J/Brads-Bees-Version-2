@@ -1,0 +1,413 @@
+/* Margins written in em reproduce the browser-default heading and paragraph
+   spacing the Django page relied on (Tailwind's reset removes them). */
+
+.services-page {
+  --services-bg: #fffbe9;
+  --services-heading: #181d26;
+  --services-card-dark: #252c3a;
+
+  display: flow-root;
+  background: var(--services-bg);
+  font-family: Montserrat, Arial, sans-serif;
+  line-height: normal;
+}
+
+.service-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+.service-hero {
+  text-align: center;
+  padding: 3rem 0 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.service-hero h1 {
+  margin: 0.67em 0 1rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--services-heading);
+}
+
+.service-hero p {
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.service-hero-image {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 0.1);
+  background: var(--white);
+}
+
+/* =========================================================
+   Feature cards
+   ========================================================= */
+.service-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Bee Removal: wider cards that extend past a light band */
+.service-features-wide {
+  grid-template-columns: repeat(4, 320px);
+  justify-content: center;
+  padding-top: 40px;
+  background: var(--section-light);
+}
+
+.service-feature-card {
+  padding: 2rem 1.2rem 1.8rem;
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.06);
+  text-align: center;
+}
+
+.feature-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 65px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(160deg, var(--honey-light), var(--gold) 70%);
+  clip-path: var(--hexagon);
+  overflow: hidden;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transform: scale(3);
+}
+
+.service-feature-card h3 {
+  margin: 1em 0 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--services-heading);
+}
+
+.service-feature-card p {
+  margin: 1em 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666666;
+}
+
+/* =========================================================
+   White panels (process, crops)
+   ========================================================= */
+.service-panel {
+  max-width: 1100px;
+  margin: 2rem auto 2.5rem;
+  padding: 2.5rem 2rem;
+  background: var(--white);
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.06);
+  text-align: center;
+}
+
+.service-panel h2 {
+  margin: 0.83em 0 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--services-heading);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 2rem;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  max-width: 340px;
+  padding: 36px 28px 28px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.07);
+  text-align: center;
+}
+
+.step-number {
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.process-step h4 {
+  margin: 1.33em 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--services-heading);
+}
+
+.process-step p {
+  margin: 1em 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666666;
+}
+
+.pollination-crops {
+  margin-top: 0;
+}
+
+.pollination-crops h2 {
+  margin-bottom: 0.5rem;
+}
+
+.crops-intro {
+  margin: 1em 0 2rem;
+  color: #666666;
+}
+
+.crop-columns {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.crop-col h3 {
+  margin: 1em 0 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.crop-col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.crop-col li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.crop-note {
+  margin: 2rem 0 1em;
+  font-size: 1rem;
+  color: #666666;
+}
+
+.crop-note strong {
+  color: var(--gold);
+}
+
+/* =========================================================
+   Dark package section
+   ========================================================= */
+.service-packages {
+  max-width: 1100px;
+  margin: 0 auto 2.5rem;
+  padding: 2.5rem 2rem;
+  background: var(--services-heading);
+  color: var(--white);
+  border-radius: 1.25rem;
+  text-align: center;
+}
+
+.service-packages h2 {
+  margin: 0.83em 0 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.package-card {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+  background: var(--services-card-dark);
+  border-radius: 1rem;
+}
+
+.package-card h3 {
+  margin: 1em 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.package-card h4 {
+  margin: 1.33em 0 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.package-card ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.package-card li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #cccccc;
+}
+
+.check-icon {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* =========================================================
+   Call to action
+   ========================================================= */
+.service-contact {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.service-contact h2 {
+  margin: 0.83em 0 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--services-heading);
+}
+
+.service-contact p {
+  margin: 1em 0 1.5rem;
+  font-size: 1.1rem;
+  color: #555555;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.call-btn,
+.msg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+}
+
+.call-btn:hover,
+.msg-btn:hover {
+  text-decoration: none;
+}
+
+.call-btn {
+  background: var(--gold);
+}
+
+.call-btn:hover {
+  background: #c17600;
+}
+
+.msg-btn {
+  background: var(--services-heading);
+}
+
+.msg-btn:hover {
+  background: #2a3140;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 1400px) {
+  .service-features-wide {
+    grid-template-columns: repeat(2, minmax(0, 320px));
+  }
+}
+
+@media (max-width: 1000px) {
+  .service-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1.5rem;
+  }
+
+  .crop-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .service-content {
+    padding: 0 1rem;
+  }
+
+  .service-hero h1 {
+    font-size: 2rem;
+  }
+
+  .service-features,
+  .service-features-wide {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .call-btn,
+  .msg-btn {
+    width: 100%;
+  }
+}
