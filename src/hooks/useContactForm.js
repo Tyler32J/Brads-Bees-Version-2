@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useMessage } from './useMessage'
-import { submitContactForm } from '../lib/api'
+import { MAX_PHOTOS, MAX_PHOTO_MB, submitContactForm } from '../lib/api'
 import { isValidName, isValidPhone, isValidEmail } from '../lib/validation'
 
 export const SERVICE_OPTIONS = ['Bee Removal', 'Pollination Service', 'Education Service', 'Hive Set-Up']
@@ -11,6 +11,7 @@ const INITIAL_VALUES = {
   phone: '',
   service: SERVICE_OPTIONS[0],
   message: '',
+  website: '',
 }
 
 function validate(values) {
@@ -41,14 +42,23 @@ export function useContactForm() {
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length > 0) return
 
+    if (images.length > MAX_PHOTOS) {
+      showMessage('error', `Please attach up to ${MAX_PHOTOS} photos.`)
+      return
+    }
+    if (images.some((file) => file.size > MAX_PHOTO_MB * 1024 * 1024)) {
+      showMessage('error', `Each photo must be under ${MAX_PHOTO_MB}MB. Please remove the larger ones.`)
+      return
+    }
+
     setSubmitting(true)
     try {
       await submitContactForm({ ...values, images })
-      showMessage('success', 'Form submitted successfully!')
+      showMessage('success', 'Thanks! Your message was sent. Brad will be in touch soon.')
       setValues(INITIAL_VALUES)
       setImages([])
-    } catch {
-      showMessage('error', 'Something went wrong. Please try again or call us directly.')
+    } catch (error) {
+      showMessage('error', error.message || 'Something went wrong. Please try again or call us directly.')
     } finally {
       setSubmitting(false)
     }

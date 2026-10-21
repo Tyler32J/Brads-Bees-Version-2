@@ -15,13 +15,17 @@ function PhotoPreview({ file }) {
   return <img ref={imgRef} alt={file.name} />
 }
 
+// Some phones give photos (like iPhone HEIC) no image type, so also check the extension
+const IMAGE_EXTENSIONS = /\.(jpe?g|png|gif|webp|heic|heif|bmp|tiff?)$/i
+const isImage = (file) => file.type.startsWith('image/') || IMAGE_EXTENSIONS.test(file.name)
+
 // A large tap-or-drag area for adding photos, with previews of the chosen
 // photos. New photos are added to the list rather than replacing it.
 export default function PhotoUpload({ id, images, onChange }) {
   const [dragging, setDragging] = useState(false)
 
   function addFiles(fileList) {
-    const incoming = Array.from(fileList).filter((file) => file.type.startsWith('image/'))
+    const incoming = Array.from(fileList).filter(isImage)
     if (incoming.length === 0) return
     // Skip photos that are already in the list
     const isNew = (file) =>

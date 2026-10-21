@@ -2,6 +2,7 @@ import { useContactForm, SERVICE_OPTIONS } from '../hooks/useContactForm'
 import { formatPhone } from '../lib/validation'
 import PhotoUpload from '../components/forms/PhotoUpload'
 import './Contact.css'
+import HoneypotField from '../components/forms/HoneypotField'
 
 function FieldErrors({ id, message }) {
   if (!message) return null
@@ -35,6 +36,7 @@ export default function Contact() {
         <p>Call us any time for bee removal or service questions.</p>
 
         <form className="contact-card-form" onSubmit={handleSubmit} noValidate>
+          <HoneypotField value={values.website} onChange={(value) => update('website', value)} />
           <div className="contact-field">
             <label htmlFor="contact-page-name">Name:</label>
             <input type="text" maxLength={50} placeholder="Your Name" {...inputProps('name')} />

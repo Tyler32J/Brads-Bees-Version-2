@@ -18,7 +18,7 @@ const INITIAL_STATE = {
 const REQUIRED_FIELDS = ['address', 'city', 'state', 'zip']
 
 export default function CheckoutForm({ onSuccess }) {
-  const { items, subtotal, shipping, total, clear } = useCart()
+  const { items, clear } = useCart()
   const { showMessage } = useMessage()
   const [form, setForm] = useState(INITIAL_STATE)
   const [errors, setErrors] = useState({})
@@ -50,11 +50,11 @@ export default function CheckoutForm({ onSuccess }) {
 
     setSubmitting(true)
     try {
-      await submitOrder({ billing: form, items, subtotal, shipping, total })
+      await submitOrder({ customer: form, items })
       clear()
       onSuccess?.()
-    } catch {
-      showMessage('error', 'Something went wrong placing your order. Please try again.')
+    } catch (error) {
+      showMessage('error', error.message || 'Something went wrong placing your order. Please try again.')
     } finally {
       setSubmitting(false)
     }

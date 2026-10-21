@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { CartContext } from './CartContext'
 import { getProduct } from '../data/products'
+import { shippingFor } from '../data/productCatalog'
 
 const STORAGE_KEY = 'brads-bees-cart'
-const SHIPPING_THRESHOLD = 50
-const FLAT_SHIPPING = 5
 
 // Only { id, qty } is stored. Names and prices always come from the product
 // catalog, so a price change can't leave a stale price in someone's cart.
@@ -63,7 +62,7 @@ export function CartProvider({ children }) {
 
     const items = lines.map((line) => ({ ...getProduct(line.id), qty: line.qty }))
     const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0)
-    const shipping = subtotal === 0 || subtotal >= SHIPPING_THRESHOLD ? 0 : FLAT_SHIPPING
+    const shipping = shippingFor(subtotal)
 
     return {
       items,

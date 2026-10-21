@@ -10,11 +10,6 @@ import Checkout from './pages/Checkout'
 import Education from './pages/Education'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
-import Ideas from './pages/Ideas'
-import CartIdeas from './pages/CartIdeas'
-import ShopIdeas from './pages/ShopIdeas'
-import MoreIdeas from './pages/MoreIdeas'
-import ExtraIdeas from './pages/ExtraIdeas'
 
 function App() {
   return (
@@ -31,11 +26,6 @@ function App() {
               <Route path="/education" element={<Education />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/ideas" element={<Ideas />} />
-              <Route path="/ideas/cart" element={<CartIdeas />} />
-              <Route path="/ideas/shop" element={<ShopIdeas />} />
-              <Route path="/ideas/more" element={<MoreIdeas />} />
-              <Route path="/ideas/extra" element={<ExtraIdeas />} />
             </Route>
           </Routes>
         </BrowserRouter>

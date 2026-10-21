@@ -2,6 +2,7 @@ import { useContactForm, SERVICE_OPTIONS } from '../../hooks/useContactForm'
 import { formatPhone } from '../../lib/validation'
 import PhotoUpload from './PhotoUpload'
 import './ContactForm.css'
+import HoneypotField from './HoneypotField'
 
 export default function ContactForm() {
   const { values, errors, update, images, setImages, submitting, handleSubmit } =
@@ -12,6 +13,7 @@ export default function ContactForm() {
       <h3 className="contact-form-title">Send Us a Message</h3>
 
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
+        <HoneypotField value={values.website} onChange={(value) => update('website', value)} />
         <div className="form-group">
           <label className="form-label" htmlFor="contact-name">
             Name
