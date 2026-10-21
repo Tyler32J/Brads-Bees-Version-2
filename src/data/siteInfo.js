@@ -21,8 +21,7 @@ export const siteInfo = {
     label: 'Hives for Heroes',
     url: 'https://hivesforheroes.org/pages/support',
   },
-  // TODO: placeholder - swap in Brad's real Facebook page link before launch
-  facebook: 'https://www.facebook.com/',
+  facebook: 'https://www.facebook.com/share/1R3trepZjM/',
 }
 
 export const navLinks = [
